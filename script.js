@@ -3,7 +3,7 @@ let weatherInfo = {};//stores weather data. global because easier to work with
 
 //getting coords by searching city name. calls cleanGeoCodingData()
 function geoCoding(cityName) {
-  fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=8fac8ffe3c4eec71f67056d735e1228c`,
+  fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=8fac8ffe3c4eec71f67056d735e1228c`,
   {mode: "cors"})
     .then(function(response) {
       return response.json();
@@ -152,7 +152,7 @@ function createWeatherInfoCard (weatherDataObject, locationName) {
   conditionText1.textContent = weatherDataObject.desc;
   conditionText2.textContent = weatherDataObject.desc2;
   conditionIcon.setAttribute('src',
-   `http://openweathermap.org/img/wn/${weatherDataObject.icon}.png`);
+   `https://openweathermap.org/img/wn/${weatherDataObject.icon}.png`);
   temp.textContent = `Temperature: ${weatherDataObject.temp} \u{00B0}C`;
   tempMin.textContent = `Min: ${weatherDataObject.tempMin} \u{00B0}C`;
   tempMax.textContent = `Max: ${weatherDataObject.tempMax} \u{00B0}C`;
